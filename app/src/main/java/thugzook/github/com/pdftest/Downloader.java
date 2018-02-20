@@ -17,22 +17,24 @@ import java.net.URL;
 
 public class Downloader {
 
+    /*** THIS VERSION GOES AROUND THE ASYNCEVENT REQUIREMENT WITH CHANGING THE SDK'S THREAD POLICY ***/
     public static void DownloadFile(String fileURL, File directory) {
         try {
-
-            FileOutputStream f = new FileOutputStream(directory);
-            URL u = new URL(fileURL);
-            HttpURLConnection c = (HttpURLConnection) u.openConnection();
-            //c.setRequestMethod("GET");
-            //maybe this will work. circumvents the async
+            //Circumvents the async requirement needed by higher build versions.
             if (android.os.Build.VERSION.SDK_INT > 9) {
                 StrictMode.ThreadPolicy policy =
                         new StrictMode.ThreadPolicy.Builder().permitAll().build();
                 StrictMode.setThreadPolicy(policy);
             }
+            //////////////////////////////////////////////////////////////////////
+
+            FileOutputStream f = new FileOutputStream(directory);
+            URL u = new URL(fileURL);
+            HttpURLConnection c = (HttpURLConnection) u.openConnection();
             c.connect();
             InputStream in = c.getInputStream();
 
+            //Read bytes of the file
             byte[] buffer = new byte[8192];
             int len1 = 0;
             while ((len1 = in.read(buffer)) > 0) {

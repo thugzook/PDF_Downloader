@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.Button;
 
 public class Main extends AppCompatActivity {
-    Button pdfButton;
+    /**NOTE this program only works after including the correct permissions and adding dependencies to build.gradle**/
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -18,9 +18,10 @@ public class Main extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Main.this, pdfView.class);
+
+                //pass the URL and filename to pdfView
                 intent.putExtra("File URL", "https://www.colorado.edu/physics/phys1110/phys1110_sp15/lectures/Lec14.pdf");
-                //intent.putExtra("File URL", "http://download940.mediafire.com/4bjw794wg6yg/tou3v80fs397q8o/posterGundam1.pdf"); //put extra values to be passed into the intent received by pdfView
-                intent.putExtra ("File Name", "Gundam1.pdf"); //2nd value is the file name wanted
+                intent.putExtra ("File Name", "finalfinal.pdf");
                 startActivity(intent);
             }
         });

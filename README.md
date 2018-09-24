@@ -5,5 +5,5 @@ Original source code from (https://github.com/barteksc/AndroidPdfViewerV2) edite
 The path to the relevant source code is located at: PDF_Downloader/app/src/main/java/thugzook/github/com/pdftest/
 
 Dependencies:
-⋅⋅*compile 'com.github.barteksc:android-pdf-viewer:2.8.2'
-⋅⋅*compile 'org.apache.directory.studio:org.apache.commons.io:2.4'
+  * compile 'com.github.barteksc:android-pdf-viewer:2.8.2'
+  * compile 'org.apache.directory.studio:org.apache.commons.io:2.4'

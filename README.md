@@ -1,5 +1,5 @@
 # PDF_Downloader
-Personal documentation for downloading PDF files from the internet and viewing it within an Android application, without the need for an external PDF viewer application. File path located at:
+Allows for downloading of PDF files from the internet and viewing it within an Android application, without the need for an external PDF viewer application. File path located at:
 
 **PDF_Downloader/app/src/main/java/thugzook/github/com/pdftest/**
 
